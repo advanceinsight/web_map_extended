@@ -1,0 +1,37 @@
+<odoo>
+  <data>
+    <record model="ir.ui.view" id="web_map_extended_cat_tree">
+      <field name="name">cat_tree</field>
+      <field name="model">web_map_extended.cat</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="color"/>
+          <field name="latitude"/>
+          <field name="longitude" />
+          <field name="partner_latitude" invisible="1"/>
+          <field name="partner_longitude" invisible="1"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="web_map_extended_cat_form">
+      <field name="name">cat_form</field>
+      <field name="model">web_map_extended.cat</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group>
+              <field name="name"/>
+              <field name="color"/>
+              <field name="latitude"/>
+              <field name="longitude" />
+              <field name="partner_latitude" invisible="1"/>
+              <field name="partner_longitude" invisible="1"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+  </data>
+</odoo>
