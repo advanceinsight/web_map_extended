@@ -7,7 +7,7 @@
     'website': "https://advanceinsight.dev",
     'license': 'LGPL-3',
     'category': 'Uncategorized',
-    'version': '0.1',
+    'version': '0.1.1',
     'depends': [
         'base',
         'web_map',
@@ -20,7 +20,7 @@
     ],
     'assets': {
         'web.assets_backend': [
-            'web_map_extended/static/src/js/**/*',
+            'web_map_extended/static/src/js/map_view_extended.js',
         ],
     },
 }

@@ -103,5 +103,4 @@ patch(MapModel.prototype, "patch_web_map_map_model", {
         }
         return fetch();
     },
-
 })

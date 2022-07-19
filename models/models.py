@@ -36,6 +36,10 @@ class Cat(models.Model):
 
     @api.model
     def update_latitude_longitude(self, partners):
+        """
+        This method receives location data after the map updates a coordinate.
+        Direct copy-paste from res.partner.update_latitude_longitude() for ease of use
+        """
         partners_data = defaultdict(list)
 
         for partner in partners:
