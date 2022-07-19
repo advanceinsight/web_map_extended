@@ -9,8 +9,8 @@
           <field name="color"/>
           <field name="latitude"/>
           <field name="longitude" />
-          <field name="partner_latitude"/>
-          <field name="partner_longitude" />
+          <field name="partner_latitude" invisible="1"/>
+          <field name="partner_longitude" invisible="1"/>
         </tree>
       </field>
     </record>
@@ -26,8 +26,8 @@
               <field name="color"/>
               <field name="latitude"/>
               <field name="longitude" />
-              <field name="partner_latitude"/>
-              <field name="partner_longitude" />
+              <field name="partner_latitude" invisible="1"/>
+              <field name="partner_longitude" invisible="1"/>
             </group>
           </sheet>
         </form>
