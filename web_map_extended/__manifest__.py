@@ -7,7 +7,7 @@
     'website': "https://advanceinsight.dev",
     'license': 'LGPL-3',
     'category': 'Uncategorized',
-    'version': '0.1.2',
+    'version': '0.1.3',
     'depends': [
         'base',
         'web_map',

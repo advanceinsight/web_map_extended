@@ -55,16 +55,23 @@ patch(MapModel.prototype, "patch_web_map_map_model", {
         // Group partners by address to reduce address list
         const addressPartnerMap = new Map();
         for (const partner of this.data.partners) {
-            if (!('contact_address_complete' in partner) && 'latitude' in partner && 'longitude' in partner) {
-                partner['contact_address_complete'] = `${partner.latitude},${partner.longitude}`;
+            // if there is no field called contact_address_complete but we do have a location
+            if (!('contact_address_complete' in partner)) {
+                if (partner.partner_latitude != partner.latitude || partner.partner_longitude != partner.longitude) {
+                    partner.partner_longitude = partner.longitude;
+                    partner.partner_latitude = partner.latitude;
+                    this.partnerToCache.push(partner);
+                }
             }
-
-            if (partner.contact_address_complete && (!partner.partner_latitude || !partner.partner_longitude)) {
+            // if there is a field contact_address_complete, but no location
+            else if (partner.contact_address_complete && (!partner.partner_latitude || !partner.partner_longitude)) {
                 if (!addressPartnerMap.has(partner.contact_address_complete)) {
                     addressPartnerMap.set(partner.contact_address_complete, []);
                 }
                 addressPartnerMap.get(partner.contact_address_complete).push(partner);
                 partner.fetchingCoordinate = true;
+
+            // if there is a location but we're not sure if it is valid
             } else if (!this._checkCoordinatesValidity(partner)) {
                 partner.partner_latitude = undefined;
                 partner.partner_longitude = undefined;
