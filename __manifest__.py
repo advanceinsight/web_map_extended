@@ -8,6 +8,7 @@
     'license': 'LGPL-3',
     'category': 'Uncategorized',
     'version': '0.1.6',
+    'license': 'MIT',
     'depends': [
         'base',
         'contacts',
