@@ -5,10 +5,9 @@
     'description': """""",
     'author': "Advance Insight",
     'website': "https://advanceinsight.dev",
-    'license': 'LGPL-3',
-    'category': 'Uncategorized',
-    'version': '0.1.6',
     'license': 'MIT',
+    'category': 'Uncategorized',
+    'version': '0.1.7',
     'depends': [
         'base',
         'contacts',
