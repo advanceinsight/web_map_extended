@@ -1,6 +1,6 @@
 <odoo>
   <data>
-    <record model="ir.ui.view" id="web_map_extended_cat_tree">
+    <!-- <record model="ir.ui.view" id="web_map_extended_cat_tree">
       <field name="name">cat_tree</field>
       <field name="model">web_map_extended.cat</field>
       <field name="arch" type="xml">
@@ -32,6 +32,6 @@
           </sheet>
         </form>
       </field>
-    </record>
+    </record> -->
   </data>
 </odoo>

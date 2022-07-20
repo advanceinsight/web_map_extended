@@ -1,6 +1,6 @@
 <odoo>
   <data>
-    <record model="ir.actions.act_window" id="web_map_extended.action_cat_window">
+    <!-- <record model="ir.actions.act_window" id="web_map_extended.action_cat_window">
       <field name="name">cats</field>
       <field name="res_model">web_map_extended.cat</field>
       <field name="view_mode">tree,form,map</field>
@@ -9,6 +9,6 @@
     <menuitem name="cats" id="web_map_extended.menu_root">
       <menuitem name="Cats List" id="web_map_extended.menu_1_list"
                 action="web_map_extended.action_cat_window"/>
-    </menuitem>
+    </menuitem> -->
   </data>
 </odoo>

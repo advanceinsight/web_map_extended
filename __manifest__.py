@@ -7,17 +7,19 @@
     'website': "https://advanceinsight.dev",
     'license': 'LGPL-3',
     'category': 'Uncategorized',
-    'version': '0.1.3',
+    'version': '0.1.4',
     'depends': [
         'base',
-        'web_map',
-        'contacts'
+        'contacts',
+        'web_map'
     ],
     'data': [
-        'security/ir.model.access.csv',
-        'views/views.xml',
-        # 'views/menu.xml',
+        'security/ir.model.access.csv'
     ],
+    # 'demo': [
+    #     'views/views.xml',
+    #     'views/menu.xml',
+    # ],
     'assets': {
         'web.assets_backend': [
             'web_map_extended/static/src/js/map_view_extended.js',

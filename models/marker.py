@@ -3,29 +3,20 @@ from collections import defaultdict
 from odoo import models, fields, api
 
 
-class Cat(models.Model):
-    _name = 'web_map_extended.cat'
-    _description = "Cats!"
+class Marker(models.Model):
+    _name = 'web_map_extended.marker'
+    _description = "Enables map view for non-res.partner models"
 
-    name = fields.Char(required=True)
-    color = fields.Selection([
-        ('red', 'red'),
-        ('green', 'green'),
-        ('blue', 'blue'),
-    ], required=True, default='green')
+    latitude = fields.Float('Latitude', digits=(10, 7), default=0.0)
+    longitude = fields.Float('Longitude', digits=(10, 7), default=0.0)
 
-    display_name = fields.Char(compute='_compute_display_name')
+    # @api.depends('latitude', 'longitude')
+    # def _compute_display_name(self):
+    #     for record in self:
+    #         record.display_name = 'some text''
 
-    latitude = fields.Float('Geo Latitude', digits=(10, 7), default=51.762451)
-    longitude = fields.Float('Geo Longitude', digits=(10, 7), default=5.526943)
-
-    @api.depends('latitude', 'longitude')
-    def _compute_display_name(self):
-        for record in self:
-            record.display_name = f'This {record.color} cat called {record.name} is at {record.latitude}, {record.longitude}!'
-
-    partner_latitude = fields.Float(string='internal latitude', digits=(10, 7))
-    partner_longitude = fields.Float(string='internal longitude', digits=(10, 7))
+    partner_latitude = fields.Float(string='Internal latitude', digits=(10, 7))
+    partner_longitude = fields.Float(string='Internal longitude', digits=(10, 7))
 
     @api.onchange('latitude', 'longitude')
     def _delete_coordinates(self):
@@ -54,3 +45,13 @@ class Cat(models.Model):
             })
 
         return {}
+
+    @api.model_create_multi
+    def create(self, vals_list):
+        """ On create copy lat/long to partner_lat/long"""
+        for vals in vals_list:
+            if 'latitude' in vals:
+               vals['partner_latitude'] = vals['latitude']
+            if 'longitude' in vals:
+                vals['partner_longitude'] = vals['longitude']
+        return super(Marker, self).create(vals_list)
