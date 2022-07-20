@@ -2,7 +2,8 @@
 
 # web_map_extended
 <br clear="left"/>
-This module, made by [Advance Insight](https://www.advanceinsight.dev/), allows you to use the map view in Odoo Enterprise with other models besides the standard contacts and companies (the `res.partner` model).
+
+This module, made by [Advance Insight](https://www.advanceinsight.dev), allows you to use the map view in Odoo Enterprise with other models besides the standard contacts and companies (the `res.partner` model).
 
 
 ----
