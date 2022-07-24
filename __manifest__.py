@@ -5,7 +5,7 @@
     'description': """""",
     'author': "Advance Insight",
     'website': "https://advanceinsight.dev",
-    'license': 'MIT',
+    'license': 'OPL-1',
     'category': 'Uncategorized',
     'version': '0.1.7',
     'depends': [
