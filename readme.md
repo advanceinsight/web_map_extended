@@ -9,7 +9,7 @@ This module, made by [Advance Insight](https://www.advanceinsight.dev), allows y
 ----
 
 ### License
-This module is available under the MIT license. For more details, see the `license.md` file that came with this module. While not mandatory, we highly encourage you to share with the community any improvements you might make to this module.
+This module is available under the OPL-1 license. While not mandatory, we highly encourage you to share with the community any improvements you might make to this module.
 
 ----
 
